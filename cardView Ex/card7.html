@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-dark:rgb(13,17,19);
+  --clr-light:#fff;
+  --clr-secondary:#0A84FF;
+}
+
+body {
+  font-family: sans-serif;
+  background: var(--clr-dark);
+  color: var(--clr-light);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 0.5em 1em;
+  border: 0;
+  background: var(--clr-secondary);
+  color: var(--clr-light);
+  font-weight: bold;
+  border-radius: 12px;
+}
+
+.game {
+  position: relative;
+  width: 12rem;
+}
+
+.streamers {
+  display: flex;
+  text-align: center;
+}
+.streamers img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.front {
+  transition: 200ms;
+}
+.front > img {
+  border-radius: 12px;
+}
+.front .name {
+  margin: 0.75em 0;
+}
+.front .status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.front .streamers img {
+  border: 1px solid var(--clr-dark);
+}
+.front .streamers img:nth-child(1) {
+  z-index: 1;
+  transform: translateX(15px);
+}
+.front .streamers img:nth-child(2) {
+  transform: translateX(10px);
+}
+
+.back {
+  position: absolute;
+  top: 56%;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+.back .streaming-info {
+  columns: 2;
+  column-rule: 1px solid rgba(255, 255, 255, 0.6);
+}
+.back .game-stat {
+  font-size: 1.2rem;
+  text-align: center;
+}
+.back .game-stat span {
+  display: block;
+  font-size: 0.8rem;
+}
+.back .streamers {
+  display: flex;
+}
+
+.backgroundWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #24282a;
+  z-index: -1;
+  transform: scale(0.2, 0.8);
+  opacity: 0;
+  border-radius: 12px;
+}
+
+.game:hover .front {
+  transform: translateY(-25%) scale(0.8);
+}
+.game:hover .front .name {
+  animation: gameName 150ms forwards;
+}
+.game:hover .front .status {
+  opacity: 0;
+}
+.game:hover .back {
+  opacity: 1;
+}
+.game:hover .back .streamers {
+  width: 100%;
+  justify-content: space-between;
+}
+.game:hover .back .streamer {
+  font-size: 0.9rem;
+}
+.game:hover .back .name {
+  font-weight: bold;
+}
+.game:hover .rank {
+  top: -35px;
+  right: -30px;
+}
+.game:hover .backgroundWrapper {
+  transition: transform 200ms ease-in-out, opacity 100ms linear;
+  opacity: 1;
+  transform: scale(1.4, 1.2);
+}
+
+.rank {
+  position: absolute;
+  right: 15px;
+  font-weight: bold;
+  font-size: 1.12rem;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 0.5em 0.5em;
+  clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0 100%, 0 0);
+  transition: 250ms ease-in-out;
+}
+
+@keyframes gameName {
+  0% {
+    text-align: left;
+    opacity: 1;
+  }
+  20% {
+    text-align: left;
+    opacity: 0;
+  }
+  50% {
+    text-align: center;
+    opacity: 0;
+  }
+  100% {
+    text-align: center;
+    opacity: 1;
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="game">
+        <div class="rank">2</div>
+      <div class="front">
+        <img src="https://picsum.photos/200/300" alt="game">
+        <h3 class="name">Just Chatting</h3>
+        <div class="status">
+          <p class="viewers">132.5k</p>
+          <div class="streamers">
+            <img src="https://picsum.photos/200/300" alt="">
+            <img src="https://picsum.photos/200/300" alt="">
+            <img src="https://picsum.photos/200/300" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="back">
+        <div class="streaming-info">
+          <p class="game-stat">174.4k <span>Watching</span></p>
+          <p class="game-stat">3,172<span>Streams</span></p>
+        </div>
+        <button class="btn">See more streams</button>
+       <div class="streamers">
+         <div class="streamer">
+           <div class="icon">
+             <img src="https://picsum.photos/200/300" alt="">
+           </div>
+         <p class="name">gamer 1</p>
+         <p class="number">18k</p>
+           </div>
+          <div class="streamer">
+            <div class="icon">
+              <img src="https://picsum.photos/200/300" alt="">
+            </div>
+         <p class="name">gamer 2</p>
+         <p class="number">9,600</p>
+           </div>
+          <div class="streamer">
+            <div class="icon">
+               <img src="https://picsum.photos/200/300" alt="">
+            </div>
+         <p class="name">gamer 3</p>
+         <p class="number">7,407</p>
+           </div>
+        </div>
+        </div>
+        <div class="backgroundWrapper"></div>
+        </div>
+</body>
+</html>

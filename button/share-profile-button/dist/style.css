@@ -1,0 +1,98 @@
+:root {
+  --blue: #5479ff;
+  --white: #ffffff;
+  --max: 9999px;
+  --gray: #bfbfbf;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 1.78;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+button {
+  all: unset;
+  background: var(--white);
+  border: 2px solid var(--gray);
+  color: var(--gray);
+  padding: 15px 30px;
+  border-radius: var(--max);
+  cursor: pointer;
+  transition: 500ms all ease-in-out;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  width: 200px;
+}
+button:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--blue);
+}
+button:hover .icons__icon {
+  transform: translateY(-75%);
+  transition: all 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  /* easeInOutBack */
+}
+button:hover .icons__icon:nth-child(1) {
+  transition-delay: 30ms;
+}
+button:hover .icons__icon:nth-child(2) {
+  transition-delay: 60ms;
+}
+button:hover .icons__icon:nth-child(3) {
+  transition-delay: 90ms;
+}
+button:hover .icons__icon:nth-child(4) {
+  transition-delay: 120ms;
+}
+button:hover .icons__icon:nth-child(5) {
+  transition-delay: 150ms;
+}
+
+.icons {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.icons__icon {
+  background: var(--white);
+  height: 25px;
+  width: 25px;
+  border-radius: var(--max);
+  background: var(--white);
+  padding: 6px;
+  transform: translateY(60%);
+  transition: all 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  /* easeInOutBack */
+}
+.icons__icon:nth-child(1) {
+  transition-delay: 20ms;
+}
+.icons__icon:nth-child(2) {
+  transition-delay: 40ms;
+}
+.icons__icon:nth-child(3) {
+  transition-delay: 60ms;
+}
+.icons__icon:nth-child(4) {
+  transition-delay: 80ms;
+}
+.icons__icon:nth-child(5) {
+  transition-delay: 100ms;
+}
+.icons__icon svg {
+  stroke: var(--blue);
+}

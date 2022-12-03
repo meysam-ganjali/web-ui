@@ -1,0 +1,406 @@
+/* Fonts */
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+/* Variables */
+
+$heading-color:white;
+$heading-size:22px;
+$heading-weight:700;
+$sub-heading-color:white;
+$sub-heading-size:12px;
+$sub-heading-weight:400;
+$heading-style:uppercase;
+
+$wrapper-width:380px;
+$content-width:185px;
+$content-height:60px;
+$content-background:transparent;
+$content-radius:1px;
+$content-shadow:false;
+$box-shadow:0px 2px rgba(0, 0, 0, 0.34);
+
+$global-font:'Montserrat', sans-serif;
+$text-color:black;
+$text-align:center;
+$background:#2A0E22;
+$title-width:320px;
+$title-height:230px;
+$background-image:'';
+
+$include-social:true;
+$include-made:true;
+
+/* Heart Vars */
+
+$heart-width:14px;
+$heart-height:24px;
+$heart-color:#CB3D3D;
+$hr:45deg;
+$hl:$hr - ($hr * 2);
+
+/* Placeholders */
+
+%center{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  top:0;
+  margin:auto;
+}
+
+%reset{
+  margin:0;
+  padding:0;
+}
+
+%fontSmooth{
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+}
+
+/* Styles */
+
+body{
+  font-family:$global-font;
+  text-align:$text-align;
+  background-color:$background;
+  height:100vh; // Set body height to full screen height
+  overflow:hidden;
+  background-image:url($background-image);
+  @extend %reset !optional;
+  @extend %fontSmooth !optional; // Geez this makes a big difference
+  h1{
+    color:$heading-color;
+    font-size:$heading-size;
+    margin-top:30px;
+    font-weight:$heading-weight;
+  }
+  h2{
+    color:$sub-heading-color;
+    font-size:$sub-heading-size;
+    font-weight:$sub-heading-weight;
+  }
+  h1,h2{
+    text-transform:$heading-style;
+  }
+  p{
+    color:$text-color;
+  }
+  .wrapper{
+    width:$wrapper-width;
+    margin:0 auto;
+    height:100%;
+    position:relative;
+    &_content{
+      width:$content-width;
+      height:$content-height;
+      background-color:$content-background;
+      border-radius:$content-radius;
+      @if $content-shadow == true {
+        box-shadow:$box-shadow;
+      }
+      @extend %center !optional;
+    }
+    &_title{
+      float:left;
+      text-align:left;
+      right:auto;
+      width:$title-width;
+      height:$title-height;
+      @extend %center;
+      &__social a{
+        position:relative;
+        overflow:hidden;
+        .slide{
+          height: 45px;
+          width: 100px;
+          float: left;
+          position: absolute;
+          transform: skew(20deg);
+          left: -120px;
+          transition-property:left;
+          transition-duration:.2s;
+          background: white;
+          .arrow{
+            position: absolute;
+            right: 31px;
+            top: 24px;
+            opacity:0;
+            transform: skew(-20deg);
+            .stem{
+              width: 10px;
+              height: 2px;
+              background: rgb(133, 132, 144);
+            }
+            .point{
+              width: 6px;
+              height: 6px;
+              border-right: 2px solid rgb(133, 132, 144);
+              top: -3px;
+              right: 1px;
+              position: absolute;
+              transform: rotate(45deg);
+              border-top: 2px solid rgb(133, 132, 144);
+            }
+          }
+        }
+        @if $include-social == true{
+          display:block !important;
+        }
+        display:none;
+        width: 140px;
+        margin-right: 15px;
+        text-decoration:none;
+        padding: 0px 0px 5px 0px;
+        height: 40px;
+        border: 2px solid white;
+        float: left;
+        color: white;
+        font-size: 12px;
+        font-weight: 400;
+        margin-top:20px;
+        img{
+          width: 16px;
+          margin-left: 10px;
+          position: relative;
+          margin-right: 8px;
+          transition-property:margin-left;
+          transition-duration:.1s;
+          margin-top: 10px;
+          top: 4px;
+        }
+        &:hover > .slide{
+          left:-70px;
+          transition-property:left;
+          transition-duration:.1s;
+        }
+        &:hover > img{
+          margin-left:40px;
+          transition-property:margin-left;
+          transition-duration:.1s;
+        }
+        &:hover > .slide .arrow{
+          right:11px;
+          opacity:1;
+          transition-property:right,opacity;
+          transition-delay:.07s;
+          transition-duration:.2s;
+        }
+      }
+    }
+  }
+  .love{
+    position: absolute;
+    right: 20px;
+    bottom: 0px;
+    font-size: 11px;
+    font-weight: normal;
+    p{
+      color:white;
+      font-weight:normal;
+      font-family: 'Open Sans', sans-serif;
+    }
+    a{
+      color:white;
+      font-weight:700;
+      text-decoration:none;
+    }
+    img{
+      position:relative;
+      top:3px;
+      margin:0px 4px;
+      width:10px;
+    }
+  }
+  .brand{
+    position:absolute;
+    left:20px;
+    bottom:14px;
+    img{
+      width:30px;
+    }
+  }
+}
+input{
+  display:none;
+}
+input[type='checkbox']:checked + label > .favourite .favourite_text{
+  top:7px;
+  opacity:0;
+  transition-property:top,opacity;
+  transition-duration:0.3s;
+  transition-delay:.0s;
+}
+input[type='checkbox']:checked + label > .favourite{
+  width:20px;
+  transition-delay:.2s;
+  box-shadow:0px 0px 0px 0px transparent;
+}
+input[type='checkbox']:not(checked) + label > .favourite .favourite_heart{
+
+}
+input[type='checkbox']:checked + label > .favourite .spinner{
+  @for $i from 1 through 180{
+    &_part:nth-of-type(#{$i}){
+      opacity:1;
+      transition-property:opacity;
+      transition-duration:.1s;
+      transition-delay:.7s + $i /500
+    }
+}
+
+}
+
+input[type='checkbox']:checked + label > .favourite .favourite_heart .favourite_heart__left{
+width: 6px;
+height: 12px;
+left: 3px;
+top: 0px;
+margin-top: 8px;
+transition-property: width,height,left,top,margin-top;
+transition-duration: .2s;
+transition-delay: 1.2s;
+}  input[type='checkbox']:checked + label > .favourite .favourite_heart .favourite_heart__right{
+  width: 6px;
+  transition-property:width,height,left,margin-top;
+  transition-duration:.2s;
+  transition-delay:1.2s;
+  height: 17px;
+  left: 10px;
+  margin-top: 4px;
+}
+.spinner{
+  &_part{
+    width: 2px;
+    height: 2px;
+    opacity:0;
+    background: #CB3D3D;
+    position: absolute;
+    top: 55px;
+    left: 20px;
+    transform-origin: 10px -25px;
+    @for $i from 1 through 180{
+      &:nth-of-type(#{$i}){
+        transform:rotate($i*2deg)
+      }
+  }
+}
+}
+.favourite{
+  border-radius: 100px;
+  width:20px;
+  overflow:hidden;
+  height:20px;
+  cursor:pointer;
+  @extend %center;
+  -webkit-animation:pop .6s;
+  padding:20px;
+  box-shadow:0px 0px 0px 3px white;
+  color:white;
+  transition-property:width;
+  transition-duration:.2s,.2s;
+  -webkit-transition-timing-function: cubic-bezier(0.38, -0.35, 0.265, 1.15);
+  &:hover{
+    width:146px;
+    box-shadow:0px 0px 0px 3px white;
+  }
+  &:hover > .favourite_heart .favourite_heart__left{
+    transform:scale(1.1) rotate(-45deg);
+    transition-property:transform;
+    transition-duration:.1s;
+    //-webkit-animation:heartbeat_l 1s infinite;
+  }
+  &:hover > .favourite_text{
+    top:1px;
+    opacity:1;
+    transition-property:top,opacity;
+    transition-duration:0.3s;
+    transition-delay:.3s;
+  }
+  &:hover > .favourite_heart .favourite_heart__right{
+    transform:scale(1.1) rotate(45deg);
+    transition-property:transform;
+    transition-duration:.1s;
+
+  }
+  &_text{
+    margin-left: 33px;
+    top:7px;
+    opacity:0;
+    position:relative;
+    span{
+      color:white;
+      text-transform:uppercase;
+      font-weight:normal;
+      font-size:12px;
+    }
+  }
+  &_heart{
+    position: absolute;
+    top: 19px;
+    left: 20px;
+    margin-right: 10px;
+    &__left{
+      background:$heart-color;
+      width:$heart-width;
+      height:$heart-height;
+      transform:rotate($hl);
+      position:absolute;
+      left:0px;
+      border-top-right-radius: 30px;
+      border-top-left-radius: 30px;
+    }
+    &__right{
+      background:$heart-color;
+      width:$heart-width;
+      height:$heart-height;
+      transform:rotate($hr);
+      position:absolute;
+      left: 8px;
+      border-top-right-radius: 30px;
+      border-top-left-radius: 30px;
+    }
+  }
+}
+input[type='checkbox']:not(:checked) + label > .favourite .spinner{
+  @for $i from 1 through 180{
+    &_part:nth-of-type(#{$i}){
+      opacity:0;
+      transition-property:opacity;
+      transition-duration:.1s;
+      transition-delay:0s + $i /500;
+    }
+
+}
+}
+input[type='checkbox']:not(:checked) + label > .favourite{
+      transition-property:box-shadow,width;
+      transition-duration:0s,.2s;
+      transition-delay:0s,0s;
+      box-shadow:0px 0px 0px 3px white;
+}
+/* Animations */
+
+// Any animations here
+
+@keyframes pop{
+  0%{transform:scale(0)}
+  50%{transform:scale(1.05)}
+  100%{transform:scale(1)}
+}
+
+@keyframes heartbeat_l{
+  0%{transform:scale(1.1);transform:rotate(-45deg)}
+  50%{transform:scale(.7);transform:rotate(-45deg)}
+  100%{transform:scale(1.1);transform:rotate(-45deg)}
+}
+/* Media quizzles */
+
+@media only screen and (max-height: 330px) { // Checks how the pen will look in featured iframe
+  body{
+    //  background:Red;
+  }
+}

@@ -1,0 +1,21 @@
+.brand
+  %a{:href => 'https://www.jamiecoulter.co.uk',:target => '_blank'}
+    %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/logo.png'}
+.wrapper
+  %h1 Pure css favourite button
+  %h2 Nice little button for favouriting blog posts etc.
+  .wrapper_content
+    .wrapper_content__inner
+      %input#click{:type => 'checkbox'}
+      %label{:for => 'click'}
+        .favourite
+          .spinner
+            -(1..180).each do
+              .spinner_part
+          .favourite_heart
+            .favourite_heart__left
+            .favourite_heart__right
+          .favourite_text
+            %span Favourite this
+.love
+  %p Made with <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/love_copy.png" /> by <a href='https://www.jamiecoulter.co.uk' target='_blank'> Jcoulterdesign </a>

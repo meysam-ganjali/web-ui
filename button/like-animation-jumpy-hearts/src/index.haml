@@ -1,0 +1,10 @@
+- @verbs = ['Like', 'Love', 'Favorite']
+
+.middle-wrapper
+  .like-wrapper
+    - @verbs.each do |label|
+      %a.like-button
+        %span.like-icon
+          .heart-animation-1
+          .heart-animation-2
+        #{label}

@@ -1,0 +1,134 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  overflow: hidden;
+}
+
+.btn-circle-download {
+  position: relative;
+  height: 48px;
+  width: 48px;
+  margin: auto;
+  border-radius: 100%;
+  background: #E8EAED;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+.btn-circle-download:after {
+  content: "";
+  position: relative;
+  display: block;
+  width: 200%;
+  height: 100%;
+  background-image: linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0));
+  transform: translateX(-100%);
+}
+.btn-circle-download svg {
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+.btn-circle-download svg#border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  stroke: none;
+  stroke-dasharray: 144;
+  stroke-dashoffset: 144;
+  transition: all 0.9s linear;
+}
+.btn-circle-download svg#arrow {
+  position: absolute;
+  top: 14px;
+  left: 17px;
+  stroke: #9098A9;
+  transition: all 0.2s ease;
+}
+.btn-circle-download svg#check {
+  position: absolute;
+  top: 17px;
+  left: 13px;
+  stroke: white;
+  transform: scale(0);
+}
+.btn-circle-download:hover {
+  background: rgba(0, 119, 255, 0.2);
+}
+.btn-circle-download:hover #arrow path,
+.btn-circle-download:hover #arrow polyline {
+  stroke: #0077FF;
+}
+.btn-circle-download.load {
+  background: rgba(0, 119, 255, 0.2);
+}
+.btn-circle-download.load #arrow path,
+.btn-circle-download.load #arrow polyline {
+  stroke: #0077FF;
+}
+.btn-circle-download.load #border {
+  stroke: #0077FF;
+  stroke-dasharray: 144;
+  stroke-dashoffset: 0;
+}
+.btn-circle-download.done {
+  background: #0077FF;
+  animation: rubberBand 0.8s;
+}
+.btn-circle-download.done:after {
+  transform: translateX(50%);
+  transition: transform 0.4s ease;
+  transition-delay: 0.7s;
+}
+.btn-circle-download.done #border,
+.btn-circle-download.done #arrow {
+  display: none;
+}
+.btn-circle-download.done #check {
+  transform: scale(1);
+  transition: all 0.2s ease;
+  transition-delay: 0.2s;
+}
+
+@keyframes rubberBand {
+  from {
+    transform: scale(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.15, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.15, 1);
+  }
+  50% {
+    transform: scale3d(1.1, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.credit {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  transition: all 0.2s ease;
+  -webkit-user-select: none;
+  user-select: none;
+  opacity: 0.6;
+}
+.credit img {
+  width: 72px;
+}
+.credit:hover {
+  transform: scale(0.95);
+}

@@ -1,0 +1,167 @@
+*, *:before, *:after
+  padding 0
+  margin 0
+  box-sizing border-box
+  
+box(arg)
+  width arg
+  height arg
+  
+// colors
+color1 = #ff885d
+color2 = #ACD8AA
+color3 = #94B9AF
+color4 = #06D6A0
+
+.view0--active
+  background color1
+  .default-color
+    background color1
+.view1--active
+  background color2
+  .default-color
+    background color2
+.view2--active
+  background color3
+  .default-color
+    background color3
+.view3--active
+  background color4
+  .default-color
+    background color4
+  
+body
+  height 100vh
+  width 100vw
+  overflow hidden
+main
+  box(100%)
+  display flex 
+  align-items center
+  justify-content center
+  transition .5s
+
+.modal
+  height 400px
+  width 700px
+  border-radius 5px
+  position relative
+  &__body
+    box(100%)
+    box-shadow 0 0 38px 0 rgba(#000, .53)
+    position relative
+    overflow hidden
+
+.nav  
+  left 40px
+  bottom -40px
+  width 80px
+  height 40px
+  position absolute
+  box-shadow 0 0 38px 0 rgba(#000, .53)
+  transform translateY(-30px)
+  opacity 0
+  animation nav-animation .5s 1s ease forwards
+  transition .5s
+  .nav-icon
+    box(40px)
+    position absolute
+    top 0
+    display flex
+    align-items center
+    justify-content center
+    cursor pointer
+    transition .3s
+  .prev
+    left 0
+    &:hover
+      transform translateX(-2px)
+  .next
+    right 0 
+    &:hover
+      transform translateX(2px)
+      
+.content
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+  overflow hidden
+  overflow-y auto
+  padding 30px 140px 40px 50px
+  color #ececec
+  background #333
+  h1
+    padding-top 20px
+    font-family 'Caesar Dressing'
+    transform translateY(-20px)
+    opacity 0
+    animation animate-text-down 1s .6s forwards
+    transition .5s
+  p
+    font-family 'Open Sans Condensed'
+    font-size 18px
+    padding-top 30px
+    transform translateY(-20px)
+    opacity 0
+    animation animate-text-down 1s .9s forwards
+    transition .5s
+.circ
+  box(300px)
+  position absolute
+  display flex
+  align-items center
+  justify-content center
+  bottom -150px
+  right -150px
+  z-index 10
+  animation main-circ 6s ease forwards infinite
+  transition .5s
+  > div
+    position absolute
+    border-radius 50%
+    transform scale(0)
+    transition .5s
+
+.circ1
+  box(100px)
+  animation scale-circ ease .6s forwards
+
+.circ2
+  box(200px)
+  background-color #fff
+  animation scale-circ ease .6s .2s forwards
+.circ3
+  box(300px)
+  animation scale-circ ease .6s .4s forwards
+.tt
+  transition .4s
+body
+  .fade-out
+    .tt
+      opacity 0
+      transform translateY(-20px)
+
+    .circ
+      opacity 0
+      transform scale(.5)
+
+  
+// Keyframes
+@keyframes animate-text-down
+  to
+    opacity 1
+    transform translateY(0)
+    
+@keyframes scale-circ
+  80%
+    transform scale(1.2)
+  100%
+    transform scale(1)
+
+@keyframes nav-animation
+  to
+    transform none
+    opacity 1
+ 

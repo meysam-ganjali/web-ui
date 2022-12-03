@@ -1,0 +1,40 @@
+.btn-bubble {
+  color: white;
+  background-color: #77b11c;
+  background-repeat: no-repeat;
+}
+.btn-bubble:hover, .btn-bubble:focus {
+  -webkit-animation: bubbles 1s forwards ease-out;
+          animation: bubbles 1s forwards ease-out;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 76% 88% / 1.18em 1.18em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 85% 114% / 1.01em 1.01em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) -8% 90% / 0.71em 0.71em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 88% 110% / 0.92em 0.92em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) -8% 144% / 1.17em 1.17em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 99% 142% / 0.67em 0.67em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 62% 102% / 0.88em 0.88em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 19% 126% / 0.9em 0.9em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 98% 94% / 0.51em 0.51em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 10% 134% / 0.55em 0.55em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 62% 117% / 0.87em 0.87em;
+  background-color: #77b11c;
+  background-repeat: no-repeat;
+}
+
+@-webkit-keyframes bubbles {
+  100% {
+    background-position: 84% -137%, 84% -6%, 0% -141%, 78% -344%, -3% -5%, 89% -209%, 71% -47%, 19% -188%, 94% 43%, 4% -304%, 63% -68%;
+    box-shadow: inset 0 -6.5em 0 #0072c4;
+  }
+}
+
+@keyframes bubbles {
+  100% {
+    background-position: 84% -137%, 84% -6%, 0% -141%, 78% -344%, -3% -5%, 89% -209%, 71% -47%, 19% -188%, 94% 43%, 4% -304%, 63% -68%;
+    box-shadow: inset 0 -6.5em 0 #0072c4;
+  }
+}
+body {
+  background: #10192d;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 1em 2em;
+}

@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+body {
+  font-family: Roboto, sans-serif;
+  background: rgba(255,153,255,0) f;
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  color: #505050;
+}
+h1 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 100;
+  font-size: 55px;
+  margin-bottom: 0;
+}
+.card {
+  background: #fff;
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 1px 1px 40px rgba(0,0,0,0.1);
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.card svg {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: solid 10px transparent;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(90deg, rgba(255,96,96,0.149) 40%, rgba(136,96,255,0.149) 100%);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-size: 100% 100%, 100% 100%;
+  background-position: center center, center bottom;
+  background-repeat: no-repeat;
+  transition: 1s;
+}
+.card svg:hover {
+  background-size: 100% 100%, 200% 200%;
+}
+.card svg path {
+  fill: #505050;
+}
+.card h2 {
+  margin: 0;
+  padding: 1rem;
+}
+.card .title {
+  padding: 0.7rem 1rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: #9a9a9a;
+}
+.card .desc {
+  padding: 1rem 1rem;
+  order: 2;
+  text-align: center;
+}
+.card .actions {
+  display: flex;
+}
+.card .actions button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  font-size: 16px;
+  padding: 0.7rem 1rem;
+  color: #707070;
+  font-weight: 800;
+}
+.card .actions button i {
+  font-size: 20px;
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.card .actions button i.fa-heart {
+  color: #ff6060;
+  background: rgba(255,96,96,0.149);
+}
+.card .actions button i.fa-star {
+  color: #8860ff;
+  background: rgba(136,96,255,0.149);
+}
+button:after {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  font-size: 160px;
+  transform: translateX(-50%);
+  -webkit-animation: anim 2s;
+          animation: anim 2s;
+  opacity: 0;
+}
+.heart:hover i.fas.fa-heart {
+  background: rgba(255,96,96,0.502);
+}
+.heart:hover:after {
+  content: '\f004';
+  color: rgba(255,96,96,0.588);
+}
+.star:hover i.fas.fa-star {
+  background: rgba(136,96,255,0.502);
+}
+.star:hover:after {
+  content: '\f005';
+  color: rgba(136,96,255,0.588);
+}
+.fa-instagram {
+  color: #8860ff;
+  position: absolute;
+  top: 3%;
+  right: 2%;
+  font-size: 38px;
+}
+.fa-instagram:hover {
+  font-size: 42px;
+  color: #ff6060;
+  transition: all 0.1s linear;
+  cursor: pointer;
+}
+@-webkit-keyframes anim {
+  5%, 80% {
+    opacity: 1;
+    font-size: 180px;
+  }
+  40%, 80% {
+    font-size: 160px;
+  }
+  80%, 100% {
+    opacity: 0;
+  }
+}
+@keyframes anim {
+  5%, 80% {
+    opacity: 1;
+    font-size: 180px;
+  }
+  40%, 80% {
+    font-size: 160px;
+  }
+  80%, 100% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #80afcd;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            line-height: 1.4;
+        }
+
+        .container {
+            background: url("https://picsum.photos/200/300");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 350px;
+            height: 500px;
+            position: relative;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.315);
+        }
+
+        .container .container__info {
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: 20%;
+            display: flex;
+            align-items: flex-end;
+            padding: 15px 30px;
+            color: #fff;
+        }
+
+        .container .container__info span {
+            margin-right: 20px;
+        }
+
+        .container .container__info i {
+            margin-right: 10px;
+        }
+
+        .container .container__profile {
+            background-color: #e4f2fd;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: 0;
+        }
+
+        .container .container__profile img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-position: center;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+
+        .container .container__profile h2 {
+            color: #334454;
+            font-size: 1.2rem;
+        }
+
+        .container .container__profile p {
+            color: #a1b2bc;
+            font-size: 0.8rem;
+        }
+
+        .container .container__profile p b {
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container__info">
+            <span><i class="fas fa-eye"></i>2350</span>
+            <span><i class="fas fa-comment-alt"></i>624</span>
+            <span><i class="fas fa-download"></i>1470</span>
+        </div>
+        <di class="container__profile">
+            <img src="https://picsum.photos/200/300"
+                alt="people" />
+            <div class="container__profile__text">
+                <h2>White Mountains</h2>
+                <p>by <b>Joseph Therrien</b></p>
+            </div>
+        </di>
+    </div>
+</body>
+
+</html>
